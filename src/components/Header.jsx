@@ -22,14 +22,14 @@ export default function Header({ user, date }) {
         </div>
 
         <button
-          className="w-10 h-10 rounded-full flex items-center justify-center transition-colors"
+          className="w-10 h-10 rounded-full flex items-center justify-center transition-colors cursor-pointer"
           style={{ backgroundColor: '#F3F4F6' }}
         >
           <Bell size={18} color="#6B7280" />
         </button>
 
         <div
-          className="w-10 h-10 rounded-full flex items-center justify-center text-white text-[14px] font-bold shrink-0"
+          className="w-10 h-10 rounded-full flex items-center justify-center text-white text-[14px] font-bold shrink-0 cursor-pointer"
           style={{ backgroundColor: '#2563EB' }}
         >
           {user.fullName.charAt(0)}

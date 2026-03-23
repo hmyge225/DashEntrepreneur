@@ -14,7 +14,7 @@ export default function AISuggestions({ suggestions }) {
         <h2 className="text-[16px] font-semibold text-text-primary">
           Suggestions IA pour toi ✨
         </h2>
-        <button className="text-[13px] font-semibold text-accent hover:underline">
+        <button className="text-[13px] font-semibold text-accent hover:underline cursor-pointer">
           Voir tout
         </button>
       </div>
@@ -26,7 +26,7 @@ export default function AISuggestions({ suggestions }) {
           return (
             <button
               key={card.id}
-              className="flex flex-col gap-2.5 p-4 rounded-[18px] flex-1 text-left transition-opacity hover:opacity-90"
+              className="flex flex-col gap-2.5 p-4 rounded-[18px] flex-1 text-left transition-opacity hover:opacity-90 cursor-pointer"
               style={{
                 minHeight: '160px',
                 backgroundColor: card.color,

@@ -10,13 +10,13 @@ export default function QuickActions({ actions }) {
   return (
     <div className="flex flex-col gap-1.5">
       <h2 className="text-[16px] font-semibold text-text-primary mb-1">Actions rapides</h2>
-      <div className="flex flex-row gap-3">
+      <div className="flex flex-wrap gap-3">
         {actions.map((action) => {
           const Icon = iconMap[action.icon];
           return (
             <button
               key={action.id}
-              className="flex items-center gap-[14px] h-[72px] px-4 rounded-lg flex-1 text-left transition-opacity hover:opacity-90"
+              className="flex items-center gap-[14px] h-[72px] px-4 rounded-lg flex-1 min-w-[220px] text-left transition-opacity hover:opacity-90 cursor-pointer"
               style={{
                 backgroundColor: '#FFFFFF',
                 boxShadow: '0 2px 8px rgba(0,0,0,0.05)',

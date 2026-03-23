@@ -26,7 +26,7 @@ export default function MobileHeader({ user }) {
 
       {/* Right: Bell */}
       <button
-        className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
+        className="w-9 h-9 rounded-full flex items-center justify-center shrink-0 cursor-pointer"
         style={{ backgroundColor: '#F3F4F6' }}
       >
         <Bell size={18} color="#6B7280" />

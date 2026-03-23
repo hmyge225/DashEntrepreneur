@@ -43,7 +43,7 @@ export default function Sidebar({ navItems, user }) {
           return (
             <button
               key={item.id}
-              className={`flex items-center gap-3 h-11 px-3 rounded-[10px] w-full text-left transition-colors ${
+              className={`flex items-center gap-3 h-11 px-3 rounded-[10px] w-full text-left transition-colors cursor-pointer ${
                 item.active
                   ? 'bg-accent text-white'
                   : 'text-white/60 hover:text-white/80 hover:bg-white/5'

@@ -18,7 +18,7 @@ export default function BottomNav({ navItems }) {
         return (
           <button
             key={item.id}
-            className="flex flex-col items-center gap-1 py-1 px-3"
+            className="flex flex-col items-center gap-1 py-1 px-3 cursor-pointer"
           >
             {Icon && (
               <Icon

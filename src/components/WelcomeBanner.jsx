@@ -7,7 +7,7 @@ export default function WelcomeBanner({ user }) {
 
   return (
     <div
-      className="flex items-center justify-between h-[120px] rounded-[20px] px-7 py-6 gap-6 shrink-0"
+      className="flex items-center justify-between h-[160px] rounded-[20px] px-7 py-8 gap-6 shrink-0"
       style={{
         backgroundColor: '#2563EB',
         boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
@@ -22,8 +22,7 @@ export default function WelcomeBanner({ user }) {
           Tu es dans le top 12% des entrepreneurs actifs cette semaine.
         </p>
         <button
-          className="mt-1 p-3 rounded-xl text-[13px] font-semibold text-blue-800
-          hover:text-white flex items-center gap-1.5 w-fit transition-colors bg-white"
+          className="mt-2 p-3 rounded-xl text-[13px] font-semibold text-blue-800 flex items-center gap-1.5 w-fit transition-colors bg-white cursor-pointer"
         >
           ▶ &nbsp; Reprendre le cours
         </button>

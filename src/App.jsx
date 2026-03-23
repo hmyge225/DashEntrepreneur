@@ -18,41 +18,27 @@ export default function App() {
 
   return (
     <div className="flex h-screen overflow-hidden bg-bg-primary">
-      {/* ── SIDEBAR (desktop only) ── */}
       <Sidebar navItems={mockData.navItems} user={user} />
-
-      {/* ── MAIN AREA ── */}
+      
       <div className="flex flex-col flex-1 min-w-0 overflow-hidden">
-
-        {/* Desktop Header */}
         <Header user={user} date={mockData.date} />
-
-        {/* Mobile Header */}
         <MobileHeader user={user} />
-
-        {/* ── SCROLL BODY ── */}
         <div className="flex-1 overflow-y-auto bg-bg-primary">
-
-          {/* ── DESKTOP LAYOUT (lg+) ── */}
-          <div className="hidden lg:flex gap-6 px-8 py-6">
-
-            {/* Left column */}
+          
+          <div className="hidden xl:flex gap-6 px-8 py-6">
             <div className="flex flex-col gap-5 flex-1 min-w-0">
               <WelcomeBanner user={user} />
               <QuickActions actions={mockData.quickActions} />
               <AISuggestions suggestions={mockData.aiSuggestions} />
             </div>
-
-            {/* Right column */}
             <div className="flex flex-col gap-5 w-[320px] shrink-0">
               <Progress progressItems={mockData.progressItems} />
               <BadgesCard badges={mockData.badges} />
               <NextStepCard nextStep={mockData.nextStep} />
             </div>
           </div>
-
-          {/* ── MOBILE LAYOUT (<lg) ── */}
-          <div className="flex flex-col gap-4 p-4 pb-24 lg:hidden">
+          
+          <div className="flex flex-col gap-4 p-4 pb-24 xl:hidden">
             <MobileWelcomeCard user={user} />
             <QuickActions actions={mockData.quickActions} />
             <Progress progressItems={mockData.progressItems} />
@@ -61,8 +47,6 @@ export default function App() {
             <NextStepCard nextStep={mockData.nextStep} />
           </div>
         </div>
-
-        {/* ── BOTTOM NAV (mobile only) ── */}
         <BottomNav navItems={mockData.bottomNavItems} />
       </div>
     </div>
