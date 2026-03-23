@@ -1,0 +1,124 @@
+{
+  "user": {
+    "name": "Serge",
+    "fullName": "Serge Mbouya",
+    "role": "Entrepreneur",
+    "level": "Niveau Intermédiaire",
+    "domain": "Tech & E-commerce",
+    "streak": 7,
+    "score": 1240,
+    "rank": "Top 12%",
+    "progression": 45
+  },
+  "navItems": [
+    { "id": "dashboard", "label": "Tableau de bord", "icon": "LayoutDashboard", "active": true },
+    { "id": "learn", "label": "Apprentissage", "icon": "BookOpen", "active": false },
+    { "id": "plan", "label": "Business Plan", "icon": "FileText", "active": false },
+    { "id": "mentors", "label": "Mentors", "icon": "Users", "active": false },
+    { "id": "stats", "label": "Statistiques", "icon": "BarChart3", "active": false }
+  ],
+  "bottomNavItems": [
+    { "id": "dashboard", "icon": "LayoutDashboard", "active": true },
+    { "id": "learn", "icon": "BookOpen", "active": false },
+    { "id": "stats", "icon": "BarChart3", "active": false },
+    { "id": "profile", "icon": "User", "active": false }
+  ],
+  "quickActions": [
+    {
+      "id": "learn",
+      "icon": "Play",
+      "title": "Reprendre l'apprentissage",
+      "subtitle": "Module 3 · 45% complété",
+      "color": "#2563EB",
+      "chevronColor": "#2563EB"
+    },
+    {
+      "id": "plan",
+      "icon": "Sparkles",
+      "title": "Générer un business plan",
+      "subtitle": "IA · Prêt en 2 minutes",
+      "color": "#16A34A",
+      "chevronColor": "#22C55E"
+    },
+    {
+      "id": "mentor",
+      "icon": "HeartHandshake",
+      "title": "Trouver un mentor",
+      "subtitle": "12 mentors disponibles",
+      "color": "#7C3AED",
+      "chevronColor": "#8B5CF6"
+    }
+  ],
+  "progressItems": [
+    {
+      "id": "entrepreneurship",
+      "label": "Parcours Entrepreneuriat",
+      "percentage": 45,
+      "color": "#2563EB"
+    },
+    {
+      "id": "businessplan",
+      "label": "Business Plan IA",
+      "percentage": 70,
+      "color": "#7C3AED"
+    },
+    {
+      "id": "networking",
+      "label": "Réseautage & Mentors",
+      "percentage": 20,
+      "color": "#059669"
+    }
+  ],
+  "badges": [
+    {
+      "id": "starter",
+      "icon": "Award",
+      "label": "Starter",
+      "unlocked": true
+    },
+    {
+      "id": "planner",
+      "icon": "Lock",
+      "label": "Planificateur",
+      "unlocked": false
+    },
+    {
+      "id": "certified",
+      "icon": "GraduationCap",
+      "label": "Certifié",
+      "unlocked": false
+    }
+  ],
+  "aiSuggestions": [
+    {
+      "id": "pricing",
+      "tag": "IA",
+      "icon": "Lightbulb",
+      "title": "Stratégie Pricing",
+      "description": "Optimise tes prix pour maximiser tes revenus",
+      "color": "#2563EB"
+    },
+    {
+      "id": "pitch",
+      "tag": "IA",
+      "icon": "Rocket",
+      "title": "Pitch Investor",
+      "description": "Prépare ton pitch pour lever des fonds",
+      "color": "#8B5CF6"
+    },
+    {
+      "id": "cashflow",
+      "tag": "IA",
+      "icon": "TrendingUp",
+      "title": "Gestion Cash-Flow",
+      "description": "Maîtrise ta trésorerie mois par mois",
+      "color": "#059669"
+    }
+  ],
+  "nextStep": {
+    "title": "Prochaine étape 🎯",
+    "description": "Terminer le Module 3 pour débloquer le badge Planificateur et accéder aux cours avancés.",
+    "buttonLabel": "Continuer le module"
+  },
+  "date": "Lundi 23 mars 2026"
+}
