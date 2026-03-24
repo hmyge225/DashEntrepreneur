@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Star, MapPin, BadgeCheck, MessageCircle, Search } from 'lucide-react';
 
 const mentors = [
@@ -61,6 +62,18 @@ function MentorCard({ mentor: m }) {
 }
 
 export default function Mentors() {
+  const [query, setQuery] = useState('');
+
+  const filtered = mentors.filter(m => {
+    const q = query.toLowerCase();
+    return (
+      m.name.toLowerCase().includes(q) ||
+      m.specialty.toLowerCase().includes(q) ||
+      m.location.toLowerCase().includes(q) ||
+      m.tags.some(t => t.toLowerCase().includes(q))
+    );
+  });
+
   return (
     <>
       {/* Desktop */}
@@ -68,25 +81,47 @@ export default function Mentors() {
         <div className="rounded-2xl px-7 py-6 flex items-center justify-between" style={{ background: 'linear-gradient(135deg, #7C3AED 0%, #DB2777 100%)' }}>
           <div>
             <h1 className="text-white text-[20px] font-extrabold">Trouver un Mentor</h1>
-            <p className="text-white/70 text-[13px] mt-1">12 mentors disponibles · Séances en visio 1-to-1</p>
+            <p className="text-white/70 text-[13px] mt-1">{filtered.length} mentor{filtered.length > 1 ? 's' : ''} · Séances en visio 1-to-1</p>
           </div>
           <div className="hidden xl:flex items-center gap-2 px-4 h-10 rounded-xl w-60" style={{ backgroundColor: 'rgba(255,255,255,0.15)' }}>
             <Search size={15} color="rgba(255,255,255,0.7)" />
-            <span className="text-white/60 text-[13px]">Rechercher un mentor…</span>
+            <input
+              value={query}
+              onChange={e => setQuery(e.target.value)}
+              placeholder="Rechercher un mentor…"
+              className="bg-transparent outline-none text-[13px] w-full placeholder-white/50 text-white"
+            />
           </div>
         </div>
-        <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-4">
-          {mentors.map(m => <MentorCard key={m.id} mentor={m} />)}
-        </div>
+
+        {filtered.length > 0
+          ? <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-4">
+              {filtered.map(m => <MentorCard key={m.id} mentor={m} />)}
+            </div>
+          : <p className="text-center text-[14px] py-16" style={{ color: '#9CA3AF' }}>Aucun mentor trouvé pour « {query} »</p>
+        }
       </div>
 
       {/* Mobile */}
       <div className="flex flex-col gap-4 p-4 pb-24 lg:hidden">
         <div className="rounded-2xl px-5 py-5" style={{ background: 'linear-gradient(135deg, #7C3AED 0%, #DB2777 100%)' }}>
           <h1 className="text-white text-[18px] font-extrabold">Trouver un Mentor</h1>
-          <p className="text-white/70 text-[12px] mt-0.5">12 mentors disponibles</p>
+          <p className="text-white/70 text-[12px] mt-0.5">{filtered.length} mentor{filtered.length > 1 ? 's' : ''} disponibles</p>
+          <div className="flex items-center gap-2 px-3 h-9 rounded-xl mt-3" style={{ backgroundColor: 'rgba(255,255,255,0.15)' }}>
+            <Search size={14} color="rgba(255,255,255,0.7)" />
+            <input
+              value={query}
+              onChange={e => setQuery(e.target.value)}
+              placeholder="Rechercher…"
+              className="bg-transparent outline-none text-[13px] w-full placeholder-white/50 text-white"
+            />
+          </div>
         </div>
-        {mentors.map(m => <MentorCard key={m.id} mentor={m} />)}
+
+        {filtered.length > 0
+          ? filtered.map(m => <MentorCard key={m.id} mentor={m} />)
+          : <p className="text-center text-[14px] py-12" style={{ color: '#9CA3AF' }}>Aucun mentor trouvé pour « {query} »</p>
+        }
       </div>
     </>
   );

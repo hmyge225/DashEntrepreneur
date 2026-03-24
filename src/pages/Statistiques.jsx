@@ -16,11 +16,6 @@ const kpis = [
   { icon: Target,   label: 'Objectif',    value: '45%',       sub: 'Parcours complété',       color: '#059669', bg: '#DCFCE7' },
 ];
 
-const progress = [
-  { label: 'Parcours Entrepreneuriat', pct: 45, color: '#2563EB' },
-  { label: 'Business Plan IA',         pct: 70, color: '#7C3AED' },
-  { label: 'Réseautage & Mentors',     pct: 20, color: '#059669' },
-];
 
 const CARD = { backgroundColor: '#FFFFFF', boxShadow: '0 2px 8px rgba(0,0,0,0.05)' };
 
@@ -61,23 +56,6 @@ function BarChart({ bars, height = 112 }) {
   );
 }
 
-function ProgressList({ items }) {
-  return (
-    <div className="flex flex-col gap-4">
-      {items.map(p => (
-        <div key={p.label}>
-          <div className="flex justify-between mb-1.5">
-            <span className="text-[13px] font-semibold" style={{ color: '#374151' }}>{p.label}</span>
-            <span className="text-[13px] font-bold" style={{ color: p.color }}>{p.pct}%</span>
-          </div>
-          <div className="w-full h-2.5 rounded-full" style={{ backgroundColor: '#F3F4F6' }}>
-            <div className="h-2.5 rounded-full" style={{ width: `${p.pct}%`, backgroundColor: p.color }} />
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
 
 export default function Statistiques() {
   return (
@@ -127,10 +105,6 @@ export default function Statistiques() {
           </div>
         </div>
 
-        <div className="rounded-2xl p-6" style={CARD}>
-          <h3 className="text-[15px] font-bold mb-5" style={{ color: '#1A1A1A' }}>Progression par parcours</h3>
-          <ProgressList items={progress} />
-        </div>
       </div>
 
       {/* Mobile */}
@@ -145,10 +119,6 @@ export default function Statistiques() {
         <div className="rounded-2xl p-5" style={CARD}>
           <h3 className="text-[14px] font-bold mb-4" style={{ color: '#1A1A1A' }}>Activité mensuelle</h3>
           <BarChart bars={monthBars} height={88} />
-        </div>
-        <div className="rounded-2xl p-5" style={CARD}>
-          <h3 className="text-[14px] font-bold mb-4" style={{ color: '#1A1A1A' }}>Progression par parcours</h3>
-          <ProgressList items={progress} />
         </div>
       </div>
     </>

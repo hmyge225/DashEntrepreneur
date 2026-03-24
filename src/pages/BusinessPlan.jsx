@@ -1,4 +1,4 @@
-import { Sparkles, CheckCircle, Circle, ChevronRight, FileText, Target, Users, TrendingUp, DollarSign, Rocket } from 'lucide-react';
+import { Sparkles, CheckCircle, Circle, ChevronRight, Target, Users, TrendingUp, DollarSign, Rocket } from 'lucide-react';
 
 const business_setps = [
   { id: 1, icon: Target,     
@@ -28,25 +28,6 @@ const business_setps = [
   },
 ];
 
-const suggestions = [
-  { label: 'Stratégie Pricing', 
-    color: '#2563EB', 
-    bg: '#EFF6FF' 
-  },
-  { label: 'Analyse SWOT',      
-    color: '#7C3AED', 
-    bg: '#EDE9FE' 
-  },
-  { label: 'Pitch Investor',    
-    color: '#059669', 
-    bg: '#DCFCE7' 
-  },
-];
-
-const exports = [
-  { label: 'Télécharger en PDF', color: '#2563EB', bg: '#EFF6FF' },
-  { label: 'Partager le lien',   color: '#7C3AED', bg: '#EDE9FE' },
-];
 
 function PageHeader({ done, total, pct }) {
   return (
@@ -121,31 +102,6 @@ export default function BusinessPlan() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 w-[260px] shrink-0">
-          <div className="rounded-2xl p-5 flex flex-col gap-3" style={{ backgroundColor: '#FFFFFF', boxShadow: '0 2px 8px rgba(0,0,0,0.05)' }}>
-            <div className="flex items-center gap-2">
-              <Sparkles size={15} color="#7C3AED" />
-              <h3 className="text-[14px] font-bold" style={{ color: '#1A1A1A' }}>Suggestions IA</h3>
-            </div>
-            {suggestions.map(s => (
-              <button key={s.label} className="flex items-center justify-between px-4 py-3 rounded-xl text-[13px] font-semibold cursor-pointer w-full" style={{ backgroundColor: s.bg, color: s.color }}>
-                {s.label} <ChevronRight size={14} />
-              </button>
-            ))}
-          </div>
-
-          <div className="rounded-2xl p-5 flex flex-col gap-3" style={{ backgroundColor: '#FFFFFF', boxShadow: '0 2px 8px rgba(0,0,0,0.05)' }}>
-            <div className="flex items-center gap-2">
-              <FileText size={15} color="#2563EB" />
-              <h3 className="text-[14px] font-bold" style={{ color: '#1A1A1A' }}>Exporter</h3>
-            </div>
-            {exports.map(b => (
-              <button key={b.label} className="w-full py-2.5 rounded-xl text-[13px] font-semibold cursor-pointer" style={{ backgroundColor: b.bg, color: b.color }}>
-                {b.label}
-              </button>
-            ))}
-          </div>
-        </div>
       </div>
 
       {/* Mobile */}
