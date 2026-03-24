@@ -120,5 +120,43 @@
     "description": "Terminer le Module 3 pour débloquer le badge Planificateur et accéder aux cours avancés.",
     "buttonLabel": "Continuer le module"
   },
-  "date": "Lundi 23 mars 2026"
+  "date": "Lundi 23 mars 2026",
+  "notifications": [
+    {
+      "id": "1",
+      "type": "streak",
+      "title": "Streak en danger !",
+      "description": "Complète une leçon aujourd'hui pour garder ton streak de 7 jours.",
+      "time": "Il y a 10 min",
+      "read": false,
+      "color": "#D97706"
+    },
+    {
+      "id": "2",
+      "type": "badge",
+      "title": "Badge débloqué",
+      "description": "Tu as obtenu le badge \"Starter\". Continue comme ça !",
+      "time": "Il y a 2h",
+      "read": false,
+      "color": "#7C3AED"
+    },
+    {
+      "id": "3",
+      "type": "mentor",
+      "title": "Nouveau mentor disponible",
+      "description": "Marie Dupont, experte en E-commerce, a rejoint la plateforme.",
+      "time": "Hier",
+      "read": true,
+      "color": "#2563EB"
+    },
+    {
+      "id": "4",
+      "type": "progress",
+      "title": "Module 3 à 45%",
+      "description": "Tu es à mi-chemin ! Encore un effort pour terminer le module.",
+      "time": "Il y a 2 jours",
+      "read": true,
+      "color": "#059669"
+    }
+  ]
 }

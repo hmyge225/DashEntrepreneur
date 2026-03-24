@@ -21,7 +21,7 @@ export default function App() {
       <Sidebar navItems={mockData.navItems} user={user} />
       
       <div className="flex flex-col flex-1 min-w-0 overflow-hidden">
-        <Header user={user} date={mockData.date} />
+        <Header user={user} date={mockData.date} notifications={mockData.notifications} />
         <MobileHeader user={user} />
         <div className="flex-1 overflow-y-auto bg-bg-primary">
           
