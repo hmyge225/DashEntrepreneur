@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import {
   LayoutDashboard,
   BookOpen,
@@ -12,6 +13,14 @@ const iconMap = {
   FileText,
   Users,
   BarChart3,
+};
+
+const ROUTES = {
+  dashboard:  '/',
+  learn:      '/apprentissage',
+  plan:       '/business-plan',
+  mentors:    '/mentors',
+  stats:      '/statistiques',
 };
 
 export default function Sidebar({ navItems, user }) {
@@ -40,20 +49,29 @@ export default function Sidebar({ navItems, user }) {
         </p>
         {navItems.map((item) => {
           const Icon = iconMap[item.icon];
+          const to = ROUTES[item.id] ?? '/';
           return (
-            <button
+            <NavLink
               key={item.id}
-              className={`flex items-center gap-3 h-11 px-3 rounded-[10px] w-full text-left transition-colors cursor-pointer ${
-                item.active
-                  ? 'bg-accent text-white'
-                  : 'text-white/60 hover:text-white/80 hover:bg-white/5'
-              }`}
+              to={to}
+              end={to === '/'}
+              className={({ isActive }) =>
+                `flex items-center gap-3 h-11 px-3 rounded-[10px] w-full text-left transition-colors cursor-pointer ${
+                  isActive
+                    ? 'bg-accent text-white'
+                    : 'text-white/60 hover:text-white/80 hover:bg-white/5'
+                }`
+              }
             >
-              {Icon && <Icon size={20} />}
-              <span className={`text-[14px] ${item.active ? 'font-semibold' : 'font-normal'}`}>
-                {item.label}
-              </span>
-            </button>
+              {({ isActive }) => (
+                <>
+                  {Icon && <Icon size={20} />}
+                  <span className={`text-[14px] ${isActive ? 'font-semibold' : 'font-normal'}`}>
+                    {item.label}
+                  </span>
+                </>
+              )}
+            </NavLink>
           );
         })}
       </nav>

@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import { LayoutDashboard, BookOpen, BarChart3, User } from 'lucide-react';
 
 const iconMap = {
@@ -5,6 +6,13 @@ const iconMap = {
   BookOpen,
   BarChart3,
   User,
+};
+
+const ROUTES = {
+  dashboard:  '/',
+  learn:      '/apprentissage',
+  stats:      '/statistiques',
+  profile:    '/profil',
 };
 
 export default function BottomNav({ navItems }) {
@@ -15,26 +23,24 @@ export default function BottomNav({ navItems }) {
     >
       {navItems.map((item) => {
         const Icon = iconMap[item.icon];
+        const to = ROUTES[item.id] ?? '/';
         return (
-          <button
+          <NavLink
             key={item.id}
+            to={to}
+            end={to === '/'}
             className="flex flex-col items-center gap-1 py-1 px-3 cursor-pointer"
           >
-            {Icon && (
-              <Icon
-                size={24}
-                color={item.active ? '#2563EB' : '#9CA3AF'}
-              />
+            {({ isActive }) => (
+              <>
+                {Icon && <Icon size={24} color={isActive ? '#2563EB' : '#9CA3AF'} />}
+                <div
+                  className="w-1.5 h-1.5 rounded-full"
+                  style={{ backgroundColor: isActive ? '#2563EB' : 'transparent' }}
+                />
+              </>
             )}
-            {/* Active indicator dot */}
-            {item.active && (
-              <div
-                className="w-1.5 h-1.5 rounded-full"
-                style={{ backgroundColor: '#2563EB' }}
-              />
-            )}
-            {!item.active && <div className="w-1.5 h-1.5" />}
-          </button>
+          </NavLink>
         );
       })}
     </nav>

@@ -1,17 +1,11 @@
 import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import mockData from './data/mockData.json';
 
-import Sidebar from './components/Sidebar';
-import Header from './components/Header';
-import MobileHeader from './components/MobileHeader';
-import WelcomeBanner from './components/WelcomeBanner';
-import MobileWelcomeCard from './components/MobileWelcomeCard';
-import QuickActions from './components/QuickActions';
-import Progress from './components/Progress';
-import AISuggestions from './components/AISuggestions';
-import BadgesCard from './components/BadgesCard';
-import NextStepCard from './components/NextStepCard';
-import BottomNav from './components/BottomNav';
+import Sidebar from './components/desktop/Sidebar';
+import Header from './components/desktop/Header';
+import MobileHeader from './components/mobile/MobileHeader';
+import BottomNav from './components/mobile/BottomNav';
 
 export default function App() {
   const [user] = useState(mockData.user);
@@ -19,34 +13,15 @@ export default function App() {
   return (
     <div className="flex h-screen overflow-hidden bg-bg-primary">
       <Sidebar navItems={mockData.navItems} user={user} />
-      
+
       <div className="flex flex-col flex-1 min-w-0 overflow-hidden">
         <Header user={user} date={mockData.date} notifications={mockData.notifications} />
         <MobileHeader user={user} />
+
         <div className="flex-1 overflow-y-auto bg-bg-primary">
-          
-          <div className="hidden xl:flex gap-6 px-8 py-6">
-            <div className="flex flex-col gap-5 flex-1 min-w-0">
-              <WelcomeBanner user={user} />
-              <QuickActions actions={mockData.quickActions} />
-              <AISuggestions suggestions={mockData.aiSuggestions} />
-            </div>
-            <div className="flex flex-col gap-5 w-[320px] shrink-0">
-              <Progress progressItems={mockData.progressItems} />
-              <BadgesCard badges={mockData.badges} />
-              <NextStepCard nextStep={mockData.nextStep} />
-            </div>
-          </div>
-          
-          <div className="flex flex-col gap-4 p-4 pb-24 xl:hidden">
-            <MobileWelcomeCard user={user} />
-            <QuickActions actions={mockData.quickActions} />
-            <Progress progressItems={mockData.progressItems} />
-            <AISuggestions suggestions={mockData.aiSuggestions} />
-            <BadgesCard badges={mockData.badges} />
-            <NextStepCard nextStep={mockData.nextStep} />
-          </div>
+          <Outlet context={{ user }} />
         </div>
+
         <BottomNav navItems={mockData.bottomNavItems} />
       </div>
     </div>

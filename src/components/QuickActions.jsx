@@ -1,4 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import { Play, Sparkles, HeartHandshake, ChevronRight } from 'lucide-react';
+
+const ROUTES = {
+  learn:  '/apprentissage',
+  plan:   '/business-plan',
+  mentor: '/mentors',
+};
 
 const iconMap = {
   Play,
@@ -7,6 +14,7 @@ const iconMap = {
 };
 
 export default function QuickActions({ actions }) {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col gap-1.5">
       <h2 className="text-[16px] font-semibold text-text-primary mb-1">Actions rapides</h2>
@@ -16,6 +24,7 @@ export default function QuickActions({ actions }) {
           return (
             <button
               key={action.id}
+              onClick={() => ROUTES[action.id] && navigate(ROUTES[action.id])}
               className="flex items-center gap-[14px] h-[72px] px-4 rounded-lg flex-1 min-w-[220px] text-left transition-opacity hover:opacity-90 cursor-pointer"
               style={{
                 backgroundColor: '#FFFFFF',
