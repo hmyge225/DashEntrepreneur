@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { X, TrendingUp, Settings, LogOut } from 'lucide-react';
 
-export default function ProfileModal({ user, onClose }) {
+export default function ProfileModal({ user, onClose, pos = {} }) {
   const navigate = useNavigate();
 
   function goToSettings() {
@@ -17,8 +17,8 @@ export default function ProfileModal({ user, onClose }) {
       />
 
       <div
-        className="fixed top-[80px] right-6 z-50 w-[320px] rounded-2xl shadow-2xl overflow-hidden"
-        style={{ backgroundColor: '#FFFFFF', border: '1px solid #E2E8F0' }}
+        className="fixed z-50 w-[320px] rounded-2xl shadow-2xl overflow-hidden"
+        style={{ backgroundColor: '#FFFFFF', border: '1px solid #E2E8F0', ...pos }}
       >
         <div
           className="relative px-6 pt-6 pb-4"

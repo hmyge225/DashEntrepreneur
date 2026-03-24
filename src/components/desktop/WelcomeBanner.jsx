@@ -9,7 +9,7 @@ export default function WelcomeBanner({ user }) {
     <div
       className="flex items-center justify-between h-[160px] rounded-[20px] px-7 py-8 gap-6 shrink-0"
       style={{
-        backgroundColor: '#2563EB',
+        background: 'linear-gradient(135deg, #059669 0%, #2563EB 100%)',
         boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
       }}
     >

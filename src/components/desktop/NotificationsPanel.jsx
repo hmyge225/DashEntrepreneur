@@ -15,7 +15,7 @@ export default function NotificationsPanel({ notifications, onClose }) {
       <div className="fixed inset-0 z-40" onClick={onClose} />
 
       <div
-        className="fixed top-[80px] right-[60px] z-50 w-[360px] rounded-2xl shadow-2xl overflow-hidden"
+        className="fixed top-[77px] right-6 z-50 w-[360px] rounded-2xl shadow-2xl overflow-hidden"
         style={{ backgroundColor: '#FFFFFF', border: '1px solid #E2E8F0' }}
       >
         {/* Header */}

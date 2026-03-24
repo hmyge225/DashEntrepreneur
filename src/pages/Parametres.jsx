@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Check } from 'lucide-react';
+import { Check, Settings } from 'lucide-react';
 import mockData from '../data/mockData.json';
 
 function Card({ title, children }) {
@@ -62,7 +62,39 @@ export default function Parametres() {
   ];
 
   return (
-    <div className="flex flex-col gap-4 px-8 py-6 pb-24 h-full">
+    <div className="flex flex-col gap-4 pb-24 h-full">
+
+      {/* Bannière desktop */}
+      <div className="hidden lg:flex px-8 pt-6">
+        <div
+          className="w-full rounded-2xl px-7 py-6 flex items-center justify-between"
+          style={{ background: 'linear-gradient(135deg, #059669 0%, #2563EB 100%)' }}
+        >
+          <div>
+            <h1 className="text-white text-[20px] font-extrabold">Paramètres</h1>
+            <p className="text-white/70 text-[13px] mt-1">Gérez votre profil et vos préférences</p>
+          </div>
+          <div
+            className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0"
+            style={{ backgroundColor: 'rgba(255,255,255,0.2)' }}
+          >
+            <Settings size={28} color="white" />
+          </div>
+        </div>
+      </div>
+
+      {/* Bannière mobile */}
+      <div className="lg:hidden px-4 pt-4">
+        <div
+          className="rounded-2xl px-5 py-5"
+          style={{ background: 'linear-gradient(135deg, #059669 0%, #2563EB 100%)' }}
+        >
+          <h1 className="text-white text-[18px] font-extrabold">Paramètres</h1>
+          <p className="text-white/70 text-[12px] mt-0.5">Gérez votre profil et vos préférences</p>
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-4 px-8 py-2">
       <Card title="Informations personnelles">
         <div className="flex items-center gap-4">
           <div className="w-16 h-16 rounded-full flex items-center justify-center text-white text-[24px] font-bold shrink-0" style={{ backgroundColor: '#2563EB' }}>
@@ -95,7 +127,8 @@ export default function Parametres() {
         </div>
       </Card>
 
-      <div className="flex-1" />
+        <div className="flex-1" />
+      </div>
     </div>
   );
 }

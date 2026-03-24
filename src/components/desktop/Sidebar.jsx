@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
+import ProfileModal from './ProfileModal';
 import {
   LayoutDashboard,
   BookOpen,
@@ -31,6 +32,14 @@ const ROUTES = {
 
 export default function Sidebar({ navItems, user }) {
   const [collapsed, setCollapsed] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const profileRef = useRef(null);
+
+  function getModalPos() {
+    if (!profileRef.current) return {};
+    const rect = profileRef.current.getBoundingClientRect();
+    return { left: rect.right + 8, bottom: window.innerHeight - rect.bottom };
+  }
 
   return (
     <aside
@@ -109,8 +118,10 @@ export default function Sidebar({ navItems, user }) {
       </nav>
 
       {/* Profile */}
-      <div
-        className={`flex items-center gap-[10px] py-5 border-t border-white/10 ${
+      <button
+        ref={profileRef}
+        onClick={() => setModalOpen(o => !o)}
+        className={`flex items-center gap-[10px] py-5 border-t border-white/10 w-full cursor-pointer hover:bg-white/5 transition-colors ${
           collapsed ? 'justify-center px-0' : 'px-5'
         }`}
       >
@@ -121,12 +132,20 @@ export default function Sidebar({ navItems, user }) {
           {user.fullName.charAt(0)}
         </div>
         {!collapsed && (
-          <div className="flex flex-col gap-0.5 min-w-0">
+          <div className="flex flex-col gap-0.5 min-w-0 text-left">
             <span className="text-white text-[13px] font-semibold truncate">{user.fullName}</span>
             <span className="text-white/50 text-[11px]">{user.role}</span>
           </div>
         )}
-      </div>
+      </button>
+
+      {modalOpen && (
+        <ProfileModal
+          user={user}
+          pos={getModalPos()}
+          onClose={() => setModalOpen(false)}
+        />
+      )}
     </aside>
   );
 }

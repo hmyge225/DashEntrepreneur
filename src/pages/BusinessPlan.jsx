@@ -33,7 +33,7 @@ function PageHeader({ done, total, pct }) {
   return (
     <div
       className="rounded-2xl px-6 py-6 flex items-center justify-between"
-      style={{ background: 'linear-gradient(135deg, #16A34A 0%, #2563EB 100%)' }}
+      style={{ background: 'linear-gradient(135deg, #059669 0%, #2563EB 100%)' }}
     >
       <div>
         <h1 className="text-white text-[20px] font-extrabold">Business Plan IA</h1>

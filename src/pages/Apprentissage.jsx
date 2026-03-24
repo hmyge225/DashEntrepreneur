@@ -20,7 +20,7 @@ const FILTERS = [
 const Header = () => (
   <div
     className="rounded-2xl px-6 py-6 flex items-center justify-between"
-    style={{ background: 'linear-gradient(135deg, #2563EB 0%, #7C3AED 100%)' }}
+    style={{ background: 'linear-gradient(135deg, #059669 0%, #2563EB 100%)' }}
   >
     <div>
       <h1 className="text-white text-[20px] font-extrabold">Parcours Entrepreneuriat</h1>

@@ -61,13 +61,13 @@
       "id": "businessplan",
       "label": "Business Plan IA",
       "percentage": 70,
-      "color": "#7C3AED"
+      "color": "#059669"
     },
     {
       "id": "networking",
       "label": "Réseautage & Mentors",
       "percentage": 20,
-      "color": "#059669"
+      "color": "#7C3AED"
     }
   ],
   "badges": [

@@ -78,7 +78,7 @@ export default function Mentors() {
     <>
       {/* Desktop */}
       <div className="hidden lg:flex flex-col gap-6 px-8 py-6">
-        <div className="rounded-2xl px-7 py-6 flex items-center justify-between" style={{ background: 'linear-gradient(135deg, #7C3AED 0%, #DB2777 100%)' }}>
+        <div className="rounded-2xl px-7 py-6 flex items-center justify-between" style={{ background: 'linear-gradient(135deg, #059669 0%, #2563EB 100%)' }}>
           <div>
             <h1 className="text-white text-[20px] font-extrabold">Trouver un Mentor</h1>
             <p className="text-white/70 text-[13px] mt-1">{filtered.length} mentor{filtered.length > 1 ? 's' : ''} · Séances en visio 1-to-1</p>
@@ -104,7 +104,7 @@ export default function Mentors() {
 
       {/* Mobile */}
       <div className="flex flex-col gap-4 p-4 pb-24 lg:hidden">
-        <div className="rounded-2xl px-5 py-5" style={{ background: 'linear-gradient(135deg, #7C3AED 0%, #DB2777 100%)' }}>
+        <div className="rounded-2xl px-5 py-5" style={{ background: 'linear-gradient(135deg, #059669 0%, #2563EB 100%)' }}>
           <h1 className="text-white text-[18px] font-extrabold">Trouver un Mentor</h1>
           <p className="text-white/70 text-[12px] mt-0.5">{filtered.length} mentor{filtered.length > 1 ? 's' : ''} disponibles</p>
           <div className="flex items-center gap-2 px-3 h-9 rounded-xl mt-3" style={{ backgroundColor: 'rgba(255,255,255,0.15)' }}>
