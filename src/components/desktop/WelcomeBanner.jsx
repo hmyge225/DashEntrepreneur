@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export default function WelcomeBanner({ user }) {
   const stats = [
     { value: `${user.progression}%`, label: 'Progression' },
@@ -21,11 +23,13 @@ export default function WelcomeBanner({ user }) {
         <p className="text-white/70 text-[13px] leading-tight">
           Tu es dans le top 12% des entrepreneurs actifs cette semaine.
         </p>
-        <button
-          className="mt-2 p-3 rounded-xl text-[13px] font-semibold text-blue-800 flex items-center gap-1.5 w-fit transition-colors bg-white cursor-pointer"
-        >
-          ▶ &nbsp; Reprendre le cours
-        </button>
+        <NavLink to="/apprentissage">
+          <button
+            className="mt-2 p-3 rounded-xl text-[13px] font-semibold text-blue-800 flex items-center gap-1.5 w-fit transition-colors bg-white cursor-pointer"
+          >
+            ▶ &nbsp; Reprendre le cours
+          </button>
+        </NavLink>
       </div>
 
       {/* Right: Stats */}

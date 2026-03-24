@@ -9,14 +9,24 @@ import BottomNav from './components/mobile/BottomNav';
 
 export default function App() {
   const [user] = useState(mockData.user);
+  const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
   return (
     <div className="flex h-screen overflow-hidden bg-bg-primary">
-      <Sidebar navItems={mockData.navItems} user={user} />
+      <Sidebar 
+        navItems={mockData.navItems} 
+        user={user} 
+        isMobileOpen={isMobileSidebarOpen} 
+        onCloseMobile={() => setMobileSidebarOpen(false)} 
+      />
 
       <div className="flex flex-col flex-1 min-w-0 overflow-hidden">
         <Header user={user} date={mockData.date} notifications={mockData.notifications} />
-        <MobileHeader user={user} notifications={mockData.notifications} />
+        <MobileHeader 
+          user={user} 
+          notifications={mockData.notifications} 
+          onMenuClick={() => setMobileSidebarOpen(true)} 
+        />
 
         <div className="flex-1 overflow-y-auto bg-bg-primary">
           <Outlet context={{ user }} />

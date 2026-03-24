@@ -15,7 +15,7 @@ export default function NotificationsPanel({ notifications, onClose }) {
       <div className="fixed inset-0 z-40" onClick={onClose} />
 
       <div
-        className="fixed top-[77px] right-6 z-50 w-[360px] rounded-2xl shadow-2xl overflow-hidden"
+        className="fixed top-[105px] right-5 z-50 w-[360px] rounded-2xl shadow-2xl overflow-hidden"
         style={{ backgroundColor: '#FFFFFF', border: '1px solid #E2E8F0' }}
       >
         {/* Header */}
@@ -41,7 +41,7 @@ export default function NotificationsPanel({ notifications, onClose }) {
         </div>
 
         {/* Liste */}
-        <div className="flex flex-col divide-y" style={{ divideColor: '#F3F4F6' }}>
+        <div className="flex flex-col" style={{ divideColor: '#F3F4F6' }}>
           {notifications.map(notif => {
             const meta = TYPE_ICONS[notif.type] ?? TYPE_ICONS.progress;
             const Icon = meta.icon;

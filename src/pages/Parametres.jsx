@@ -96,7 +96,7 @@ export default function Parametres() {
 
       <div className="flex flex-col gap-4 px-8 py-2">
       <Card title="Informations personnelles">
-        <div className="flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4 mb-2">
           <div className="w-16 h-16 rounded-full flex items-center justify-center text-white text-[24px] font-bold shrink-0" style={{ backgroundColor: '#2563EB' }}>
             {form.fullName.charAt(0)}
           </div>

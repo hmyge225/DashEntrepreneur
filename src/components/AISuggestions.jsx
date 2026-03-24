@@ -1,4 +1,5 @@
 import { Lightbulb, Rocket, TrendingUp } from 'lucide-react';
+import { NavLink } from 'react-router-dom';
 
 const iconMap = {
   Lightbulb,
@@ -14,9 +15,11 @@ export default function AISuggestions({ suggestions }) {
         <h2 className="text-[16px] font-semibold text-text-primary">
           Suggestions IA pour toi ✨
         </h2>
-        <button className="text-[13px] font-semibold text-accent hover:underline cursor-pointer">
-          Voir tout
-        </button>
+        <NavLink to="/business-plan">
+          <button className="text-[13px] font-semibold text-accent hover:underline cursor-pointer">
+            Voir tout
+          </button>
+        </NavLink>
       </div>
 
       {/* Cards row */}

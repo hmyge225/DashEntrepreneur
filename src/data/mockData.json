@@ -2,6 +2,7 @@
   "user": {
     "name": "Serge",
     "fullName": "Serge Mbouya",
+    "avatar": "/src/assets/serge.jpg",
     "role": "Entrepreneur",
     "level": "Niveau Intermédiaire",
     "domain": "Tech & E-commerce",
@@ -11,15 +12,15 @@
     "progression": 45
   },
   "navItems": [
-    { "id": "dashboard", "label": "Tableau de bord", "icon": "LayoutDashboard", "active": true },
-    { "id": "learn", "label": "Apprentissage", "icon": "BookOpen", "active": false },
+    { "id": "dashboard", "label": "Acceuil", "icon": "LayoutDashboard", "active": true },
+    { "id": "learn", "label": "Cours", "icon": "BookOpen", "active": false },
     { "id": "plan", "label": "Business Plan", "icon": "FileText", "active": false },
     { "id": "mentors", "label": "Mentors", "icon": "Users", "active": false },
     { "id": "stats", "label": "Statistiques", "icon": "BarChart3", "active": false },
     { "id": "parametres", "label": "Paramètres", "icon": "Settings", "active": false }
   ],
   "bottomNavItems": [
-    { "id": "dashboard", "label": "Accueil", "icon": "LayoutDashboard", "active": true },
+    { "id": "dashboard", "label": "Accueil", "icon": "LayoutDashboard", "active": false },
     { "id": "learn", "label": "Cours", "icon": "BookOpen", "active": false },
     { "id": "stats", "label": "Stats", "icon": "BarChart3", "active": false },
     { "id": "profile", "label": "Profil", "icon": "User", "active": false }

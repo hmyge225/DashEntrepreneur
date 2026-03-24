@@ -19,12 +19,6 @@ export default function MobileWelcomeCard({ user }) {
           <span className="text-[15px] font-bold text-text-primary">{user.fullName}</span>
           <span className="text-[13px] text-text-secondary">{user.role} · {user.level}</span>
         </div>
-        <div
-          className="w-14 h-14 rounded-full flex items-center justify-center text-white text-[20px] font-extrabold shrink-0"
-          style={{ backgroundColor: '#2563EB' }}
-        >
-          {user.fullName.charAt(0)}
-        </div>
       </div>
 
       {/* Stats row */}

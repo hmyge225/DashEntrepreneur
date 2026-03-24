@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Bell } from 'lucide-react';
 import MobileNotifications from './MobileNotifications';
 
-export default function MobileHeader({ user, notifications = [] }) {
+export default function MobileHeader({ user, notifications = [], onMenuClick }) {
   const [open, setOpen] = useState(false);
   const unreadCount = notifications.filter(n => !n.read).length;
 
@@ -11,23 +11,20 @@ export default function MobileHeader({ user, notifications = [] }) {
       <header className="flex lg:hidden items-center justify-between h-16 px-5 bg-bg-topbar border-b border-border shrink-0">
         {/* Left: Avatar + Greeting */}
         <div className="flex items-center gap-3">
-          <div
-            className="w-10 h-10 rounded-full flex items-center justify-center text-white text-[14px] font-bold shrink-0"
-            style={{ backgroundColor: '#2563EB' }}
+          <button
+            onClick={onMenuClick}
+            className="w-12 h-12 rounded-full overflow-hidden shrink-0 cursor-pointer border-[1.5px] border-border bg-gray-100 flex items-center justify-center shadow-md active:scale-95 transition-transform"
           >
-            {user.fullName.charAt(0)}
-          </div>
-          <div className="flex flex-col gap-0.5">
-            <span className="text-[15px] font-bold text-text-primary leading-tight">
-              Bonjour, {user.name} 👋
-            </span>
-            <span
-              className="text-[11px] font-semibold px-2.5 py-0.5 rounded-xl w-fit"
-              style={{ backgroundColor: '#E0E7FF', color: '#3730A3' }}
-            >
-              {user.domain}
-            </span>
-          </div>
+            <img 
+              src={user.avatar} 
+              alt={user.fullName} 
+              className="w-full h-full object-contain relative z-10"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.outerHTML = `<div style="background-color: #2563EB; color: white; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 16px;">${user.fullName.charAt(0)}</div>`;
+              }}
+            />
+          </button>
         </div>
 
         {/* Right: Bell */}

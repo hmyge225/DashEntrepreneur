@@ -12,7 +12,7 @@ const ROUTES = {
   dashboard:  '/',
   learn:      '/apprentissage',
   stats:      '/statistiques',
-  profile:    '/profil',
+  profile:    '/parametres',
 };
 
 export default function BottomNav({ navItems }) {
