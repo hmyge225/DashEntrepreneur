@@ -18,8 +18,13 @@ const ROUTES = {
 export default function BottomNav({ navItems }) {
   return (
     <nav
-      className="flex lg:hidden items-center justify-around h-16 px-5 border-t border-border shrink-0"
-      style={{ backgroundColor: '#FFFFFF' }}
+      className="fixed bottom-0 left-0 right-0 z-50 flex lg:hidden items-center justify-around px-5 border-t"
+      style={{ 
+        backgroundColor: '#FFFFFF', 
+        borderColor: '#E5E7EB',
+        paddingBottom: 'env(safe-area-inset-bottom)',
+        height: 'calc(64px + env(safe-area-inset-bottom))'
+      }}
     >
       {navItems.map((item) => {
         const Icon = iconMap[item.icon];
@@ -29,15 +34,17 @@ export default function BottomNav({ navItems }) {
             key={item.id}
             to={to}
             end={to === '/'}
-            className="flex flex-col items-center gap-1 py-1 px-3 cursor-pointer"
+            className="flex flex-col items-center justify-center gap-[3px] min-w-[64px] h-full cursor-pointer"
           >
             {({ isActive }) => (
               <>
-                {Icon && <Icon size={24} color={isActive ? '#2563EB' : '#9CA3AF'} />}
-                <div
-                  className="w-1.5 h-1.5 rounded-full"
-                  style={{ backgroundColor: isActive ? '#2563EB' : 'transparent' }}
-                />
+                {Icon && <Icon size={22} color={isActive ? '#2563EB' : '#9CA3AF'} />}
+                <span 
+                  className="text-[10px] font-medium leading-none"
+                  style={{ color: isActive ? '#2563EB' : '#9CA3AF' }}
+                >
+                  {item.label}
+                </span>
               </>
             )}
           </NavLink>

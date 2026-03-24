@@ -19,10 +19,10 @@
     { "id": "parametres", "label": "Paramètres", "icon": "Settings", "active": false }
   ],
   "bottomNavItems": [
-    { "id": "dashboard", "icon": "LayoutDashboard", "active": true },
-    { "id": "learn", "icon": "BookOpen", "active": false },
-    { "id": "stats", "icon": "BarChart3", "active": false },
-    { "id": "profile", "icon": "User", "active": false }
+    { "id": "dashboard", "label": "Accueil", "icon": "LayoutDashboard", "active": true },
+    { "id": "learn", "label": "Cours", "icon": "BookOpen", "active": false },
+    { "id": "stats", "label": "Stats", "icon": "BarChart3", "active": false },
+    { "id": "profile", "label": "Profil", "icon": "User", "active": false }
   ],
   "quickActions": [
     {
