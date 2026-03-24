@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-const host = '192.168.1.9';
+const host = '192.168.1.86';
 
 // https://vite.dev/config/
 export default defineConfig({

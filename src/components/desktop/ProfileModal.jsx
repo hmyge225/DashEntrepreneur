@@ -1,6 +1,14 @@
-import { X, Flame, Star, Trophy, TrendingUp, Settings, LogOut } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { X, TrendingUp, Settings, LogOut } from 'lucide-react';
 
 export default function ProfileModal({ user, onClose }) {
+  const navigate = useNavigate();
+
+  function goToSettings() {
+    onClose();
+    navigate('/parametres');
+  }
+
   return (
     <>
       <div
@@ -44,16 +52,6 @@ export default function ProfileModal({ user, onClose }) {
           </div>
         </div>
 
-        {/* Stats */}
-        <div
-          className="grid grid-cols-3 divide-x"
-          style={{ borderBottom: '1px solid #E2E8F0', divideColor: '#E2E8F0' }}
-        >
-          <StatItem icon={<Flame size={15} color="#D97706" />} value={user.streak} label="Streak" bg="#FEF3C7" />
-          <StatItem icon={<Star size={15} color="#7C3AED" />} value={user.score} label="Points" bg="#EDE9FE" />
-          <StatItem icon={<Trophy size={15} color="#16A34A" />} value={user.rank} label="Classement" bg="#D1FAE5" />
-        </div>
-
         {/* Progression */}
         <div className="px-6 py-4" style={{ borderBottom: '1px solid #E2E8F0' }}>
           <div className="flex items-center justify-between mb-2">
@@ -74,7 +72,7 @@ export default function ProfileModal({ user, onClose }) {
 
         {/* Actions */}
         <div className="px-3 py-3 flex flex-col gap-1">
-          <MenuAction icon={<Settings size={15} />} label="Paramètres du compte" />
+          <MenuAction icon={<Settings size={15} />} label="Paramètres du compte" onClick={goToSettings} />
           <MenuAction icon={<LogOut size={15} />} label="Se déconnecter" danger />
         </div>
       </div>
@@ -82,24 +80,10 @@ export default function ProfileModal({ user, onClose }) {
   );
 }
 
-function StatItem({ icon, value, label, bg }) {
-  return (
-    <div className="flex flex-col items-center py-3 gap-1">
-      <div
-        className="w-7 h-7 rounded-full flex items-center justify-center"
-        style={{ backgroundColor: bg }}
-      >
-        {icon}
-      </div>
-      <span className="text-[14px] font-bold" style={{ color: '#1A1A1A' }}>{value}</span>
-      <span className="text-[11px]" style={{ color: '#9CA3AF' }}>{label}</span>
-    </div>
-  );
-}
-
-function MenuAction({ icon, label, danger }) {
+function MenuAction({ icon, label, danger, onClick }) {
   return (
     <button
+      onClick={onClick}
       className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] font-medium transition-colors cursor-pointer text-left"
       style={{ color: danger ? '#DC2626' : '#374151' }}
       onMouseEnter={e => e.currentTarget.style.backgroundColor = danger ? '#FEF2F2' : '#F9FAFB'}

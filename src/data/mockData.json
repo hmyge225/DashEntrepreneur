@@ -15,7 +15,8 @@
     { "id": "learn", "label": "Apprentissage", "icon": "BookOpen", "active": false },
     { "id": "plan", "label": "Business Plan", "icon": "FileText", "active": false },
     { "id": "mentors", "label": "Mentors", "icon": "Users", "active": false },
-    { "id": "stats", "label": "Statistiques", "icon": "BarChart3", "active": false }
+    { "id": "stats", "label": "Statistiques", "icon": "BarChart3", "active": false },
+    { "id": "parametres", "label": "Paramètres", "icon": "Settings", "active": false }
   ],
   "bottomNavItems": [
     { "id": "dashboard", "icon": "LayoutDashboard", "active": true },

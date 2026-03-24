@@ -16,7 +16,7 @@ export default function App() {
 
       <div className="flex flex-col flex-1 min-w-0 overflow-hidden">
         <Header user={user} date={mockData.date} notifications={mockData.notifications} />
-        <MobileHeader user={user} />
+        <MobileHeader user={user} notifications={mockData.notifications} />
 
         <div className="flex-1 overflow-y-auto bg-bg-primary">
           <Outlet context={{ user }} />
