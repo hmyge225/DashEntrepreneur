@@ -9,7 +9,7 @@ const iconMap = {
 
 export default function AISuggestions({ suggestions }) {
   return (
-    <div className="flex flex-col gap-3.5">
+    <div className="flex flex-col gap-3.5 pt-2">
       {/* Header */}
       <div className="flex items-center justify-between">
         <h2 className="text-[16px] font-semibold text-text-primary">
@@ -23,13 +23,13 @@ export default function AISuggestions({ suggestions }) {
       </div>
 
       {/* Cards row */}
-      <div className="flex gap-3">
+      <div className="flex gap-3 overflow-x-auto pb-2">
         {suggestions.map((card) => {
           const Icon = iconMap[card.icon];
           return (
             <button
               key={card.id}
-              className="flex flex-col gap-2.5 p-4 rounded-[18px] flex-1 text-left transition-opacity hover:opacity-90 cursor-pointer"
+              className="flex flex-col gap-2.5 p-4 rounded-[18px] flex-1 min-w-[160px] shrink-0 text-left transition-opacity hover:opacity-90 cursor-pointer"
               style={{
                 minHeight: '160px',
                 backgroundColor: card.color,
